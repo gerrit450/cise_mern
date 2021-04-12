@@ -57,7 +57,8 @@ async function run() {
   {
     res.send("updating!");
     const db = client.db('Merndata') // go to database
-    db.collection('mern').findOneAndUpdate({title: req.body.title}, {$set: {title: "changed!", authors:{FirstName: "changed!", LastName: "changed" }}}, {upsert: true} )
+    db.collection('mern').findOneAndUpdate({title: req.body.title}, {$set: {title: "changed!", authors:{FirstName: "changed!", 
+    LastName: "changed" }}}, {upsert: true} )
 
     .then(result => {console.log(result),res.send(result)})
     .catch(error => console.error(error))
